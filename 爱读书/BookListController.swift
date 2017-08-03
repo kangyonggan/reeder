@@ -16,6 +16,7 @@ class BookListController: UITableViewController {
     
     let bookDao = BookDao();
     let sectionDao = SectionDao();
+    let debugDao = DebugDao();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,27 @@ class BookListController: UITableViewController {
             let controllers = split.viewControllers
             sectionListController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? SectionListController
         }
+        
+        reloadBookList();
+        
+        // debug
+//        debugDao.delete(entityName: "Book");
+//        debugDao.delete(entityName: "Section");
+//        debugDao.delete(entityName: "TableId");
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func reloadBookList() {
         allBooks = bookDao.findAllBooks();
         tableView.reloadData();
+    }
+    
+    @IBAction func refreshBookList(_ sender: Any) {
+        reloadBookList();
+        
+        let myAlert = UIAlertController(title: "提示", message: "刷新成功", preferredStyle: .alert);
+        let myokAction = UIAlertAction(title: "确定", style: .default, handler: nil);
+        myAlert.addAction(myokAction);
+        self.present(myAlert, animated: true, completion: nil);
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,9 +91,9 @@ class BookListController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // 删除书籍及对应的章节
-            let bookName = allBooks[indexPath.row].name;
-            bookDao.delete(bookName: bookName);
-            sectionDao.deleteBookSections(bookName: bookName);
+            let bookId = allBooks[indexPath.row].id;
+            bookDao.delete(bookId: bookId);
+            sectionDao.deleteBookSections(bookId: bookId);
             
             // 删除内存中的书籍和界面上的书籍
             allBooks.remove(at: indexPath.row)

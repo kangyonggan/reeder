@@ -16,7 +16,7 @@ class AddBookController: UIViewController {
     
     @IBOutlet weak var addRss: UIButton!
     
-    let bookDao = BookDao();
+    var bookDao = BookDao();
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -46,7 +46,6 @@ class AddBookController: UIViewController {
                 self.present(myAlert, animated: true, completion: nil);
                 
                 return;
-                
             }
             
             // 下载、解析、入库

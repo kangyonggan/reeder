@@ -10,6 +10,8 @@ import Foundation
 
 class MyBook: NSObject {
     
+    var id = 0;
+    
     // 书名
     var name = "";
     

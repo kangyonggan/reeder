@@ -10,13 +10,15 @@ import UIKit
 
 class MySection: NSObject {
     
+    var id = 0;
+    
     // 标题
     var title = "";
     
     // 内容
     var content = "";
     
-    // 书籍名称
-    var bookName = "";
+    // 书籍ID
+    var bookId = 0;
     
 }

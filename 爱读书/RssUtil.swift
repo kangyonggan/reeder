@@ -70,7 +70,6 @@ class RssUtil: NSObject, XMLParserDelegate {
             let section = MySection();
             section.title = self.currentTitle;
             section.content = self.currentContent;
-            section.bookName = self.book.name;
             
             sectionList.append(section);
             isEntry = false;
@@ -83,9 +82,10 @@ class RssUtil: NSObject, XMLParserDelegate {
     }
     
     func saveBookAndSectionList() {
-        bookDao.save(book: self.book);
+        let bookId = bookDao.save(book: self.book);
         
         for section in sectionList {
+            section.bookId = bookId;
             sectionDao.save(section: section);
         }
     }

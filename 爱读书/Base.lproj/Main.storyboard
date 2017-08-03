@@ -45,6 +45,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="书籍列表" id="QOK-mn-PuV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="vvc-bc-Ilc">
+                            <connections>
+                                <action selector="refreshBookList:" destination="hqd-ie-dW8" id="E6X-J5-2FC"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qXm-Oc-4Yc">
                             <connections>
                                 <segue destination="Xgh-hm-RkW" kind="showDetail" identifier="toAddBook" id="n12-py-lEV"/>
@@ -70,7 +75,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4B-c5-2SD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="-297"/>
+            <point key="canvasLocation" x="76" y="-1200"/>
         </scene>
         <!--添加书籍-->
         <scene sceneID="TAW-Bw-gg0">
@@ -114,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfz-MM-1tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2956" y="-297.30134932533736"/>
+            <point key="canvasLocation" x="1017" y="-1200"/>
         </scene>
         <!--章节列表-->
         <scene sceneID="lQX-5r-b6x">
@@ -141,6 +146,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Uvi-TX-hDY" kind="showDetail" identifier="toSectionDetail" id="BL3-jc-BUd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -148,11 +156,69 @@
                             <outlet property="delegate" destination="NPn-jv-rfn" id="nqj-6U-N1Y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="章节列表" id="GOv-IU-naB"/>
+                    <navigationItem key="navigationItem" title="章节列表" id="GOv-IU-naB">
+                        <barButtonItem key="rightBarButtonItem" title="续读" id="9Nx-g6-CHv">
+                            <connections>
+                                <segue destination="Uvi-TX-hDY" kind="showDetail" identifier="toActiveSection" id="a16-gj-WBE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNg-Ry-UfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1026" y="480"/>
+            <point key="canvasLocation" x="1025" y="480"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="niL-FQ-whH">
+            <objects>
+                <navigationController id="Uvi-TX-hDY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MEB-ly-QAe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oLp-sC-e41" kind="relationship" relationship="rootViewController" id="2Cs-LJ-KWx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xno-va-AUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="1415"/>
+        </scene>
+        <!--章节详情-->
+        <scene sceneID="Rk3-fv-Ex8">
+            <objects>
+                <viewController id="oLp-sC-e41" customClass="SectionDetailController" customModule="爱读书" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Opk-Bo-6sO"/>
+                        <viewControllerLayoutGuide type="bottom" id="k3t-ax-zOb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RjN-CN-5UA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-AJ-Lwq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="章节详情" id="xJP-o7-zWe">
+                        <barButtonItem key="rightBarButtonItem" title="下一章" id="VwV-vk-KUu">
+                            <connections>
+                                <action selector="nextSection:" destination="oLp-sC-e41" id="s7j-3v-nRx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="gQT-AJ-Lwq" id="MDX-Ce-44B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xrs-MP-uPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016.8" y="1289.5052473763119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Shl-Y1-FU1">
@@ -201,6 +267,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jjJ-ws-N4J"/>
+        <segue reference="TqQ-sN-91b"/>
+        <segue reference="a16-gj-WBE"/>
     </inferredMetricsTieBreakers>
 </document>

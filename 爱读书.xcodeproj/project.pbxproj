@@ -20,6 +20,10 @@
 		111C46441F307BD10054AC6F /* MyBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C46431F307BD10054AC6F /* MyBook.swift */; };
 		111C46471F316B0D0054AC6F /* BookDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C46461F316B0D0054AC6F /* BookDao.swift */; };
 		111C46491F31858B0054AC6F /* SectionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C46481F31858B0054AC6F /* SectionDao.swift */; };
+		11872B0C1F31AA3000B7592E /* SectionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11872B0B1F31AA3000B7592E /* SectionDetailController.swift */; };
+		11872B2E1F31D24000B7592E /* TableIdDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11872B2D1F31D24000B7592E /* TableIdDao.swift */; };
+		11872B301F31D79A00B7592E /* MyTableId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11872B2F1F31D79A00B7592E /* MyTableId.swift */; };
+		11C8A4B91F32B47900794694 /* DebugDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8A4B81F32B47900794694 /* DebugDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		111C46431F307BD10054AC6F /* MyBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBook.swift; sourceTree = "<group>"; };
 		111C46461F316B0D0054AC6F /* BookDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDao.swift; sourceTree = "<group>"; };
 		111C46481F31858B0054AC6F /* SectionDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDao.swift; sourceTree = "<group>"; };
+		11872B0B1F31AA3000B7592E /* SectionDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDetailController.swift; sourceTree = "<group>"; };
+		11872B2D1F31D24000B7592E /* TableIdDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableIdDao.swift; sourceTree = "<group>"; };
+		11872B2F1F31D79A00B7592E /* MyTableId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableId.swift; sourceTree = "<group>"; };
+		11C8A4B81F32B47900794694 /* DebugDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,8 @@
 			children = (
 				111C46461F316B0D0054AC6F /* BookDao.swift */,
 				111C46481F31858B0054AC6F /* SectionDao.swift */,
+				11872B2D1F31D24000B7592E /* TableIdDao.swift */,
+				11C8A4B81F32B47900794694 /* DebugDao.swift */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -98,6 +108,7 @@
 			children = (
 				111C46411F307B250054AC6F /* MySection.swift */,
 				111C46431F307BD10054AC6F /* MyBook.swift */,
+				11872B2F1F31D79A00B7592E /* MyTableId.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -116,6 +127,7 @@
 				111C46031F30313D0054AC6F /* BookListController.swift */,
 				111C46161F3031F80054AC6F /* SectionListController.swift */,
 				111C46181F3033CC0054AC6F /* AddBookController.swift */,
+				11872B0B1F31AA3000B7592E /* SectionDetailController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -193,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11872B2E1F31D24000B7592E /* TableIdDao.swift in Sources */,
 				111C46491F31858B0054AC6F /* SectionDao.swift in Sources */,
 				111C46441F307BD10054AC6F /* MyBook.swift in Sources */,
 				111C46041F30313D0054AC6F /* BookListController.swift in Sources */,
@@ -202,7 +215,10 @@
 				111C46421F307B250054AC6F /* MySection.swift in Sources */,
 				111C460A1F30313D0054AC6F /* ___.xcdatamodeld in Sources */,
 				111C46171F3031F80054AC6F /* SectionListController.swift in Sources */,
+				11C8A4B91F32B47900794694 /* DebugDao.swift in Sources */,
 				111C46191F3033CC0054AC6F /* AddBookController.swift in Sources */,
+				11872B0C1F31AA3000B7592E /* SectionDetailController.swift in Sources */,
+				11872B301F31D79A00B7592E /* MyTableId.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
