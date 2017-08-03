@@ -63,6 +63,8 @@ class AddBookController: UIViewController {
                 self.present(myAlert, animated: true, completion: nil);
                 
                 rssAdress.text = "";
+                // 通知书籍列表刷新
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "BookListRefresh"), object: nil)
             } else {
                 let myAlert = UIAlertController(title: "提示", message: "资源不存在", preferredStyle: .alert);
                 let myokAction = UIAlertAction(title: "确定", style: .default, handler: nil);

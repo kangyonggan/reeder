@@ -45,11 +45,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="书籍列表" id="QOK-mn-PuV">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="vvc-bc-Ilc">
-                            <connections>
-                                <action selector="refreshBookList:" destination="hqd-ie-dW8" id="E6X-J5-2FC"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qXm-Oc-4Yc">
                             <connections>
                                 <segue destination="Xgh-hm-RkW" kind="showDetail" identifier="toAddBook" id="n12-py-lEV"/>
@@ -90,14 +85,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RSS资源地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFd-zS-kaX">
-                                <rect key="frame" x="29" y="133" width="316" height="30"/>
+                                <rect key="frame" x="51" y="117" width="273" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pi-3U-8Yl">
-                                <rect key="frame" x="29" y="230" width="316" height="30"/>
+                                <rect key="frame" x="51" y="215" width="273" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="订　阅">
@@ -119,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfz-MM-1tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1017" y="-1200"/>
+            <point key="canvasLocation" x="1016.8" y="-1200.4497751124438"/>
         </scene>
         <!--章节列表-->
         <scene sceneID="lQX-5r-b6x">
@@ -198,7 +193,7 @@
                         <subviews>
                             <webView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-AJ-Lwq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
@@ -267,7 +262,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TqQ-sN-91b"/>
+        <segue reference="jjJ-ws-N4J"/>
         <segue reference="a16-gj-WBE"/>
     </inferredMetricsTieBreakers>
 </document>

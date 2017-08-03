@@ -27,24 +27,22 @@ class BookListController: UITableViewController {
         
         reloadBookList();
         
+        // 注册通知接收
+        NotificationCenter.default.addObserver(self, selector: #selector(BookListController.receiveNotify), name: NSNotification.Name(rawValue: "BookListRefresh"), object: nil)
+        
         // debug
 //        debugDao.delete(entityName: "Book");
 //        debugDao.delete(entityName: "Section");
 //        debugDao.delete(entityName: "TableId");
     }
     
+    func receiveNotify() {
+        reloadBookList();
+    }
+    
     func reloadBookList() {
         allBooks = bookDao.findAllBooks();
         tableView.reloadData();
-    }
-    
-    @IBAction func refreshBookList(_ sender: Any) {
-        reloadBookList();
-        
-        let myAlert = UIAlertController(title: "提示", message: "刷新成功", preferredStyle: .alert);
-        let myokAction = UIAlertAction(title: "确定", style: .default, handler: nil);
-        myAlert.addAction(myokAction);
-        self.present(myAlert, animated: true, completion: nil);
     }
     
     override func didReceiveMemoryWarning() {
